@@ -1,0 +1,168 @@
+[2026-02-18T09:40:08.254487+00:00] Vault initialized.
+2026-02-18 14:42:21,213 [INFO] ============================================================
+2026-02-18 14:42:21,213 [INFO] 🚀 PersonalAI Watcher starting up...
+2026-02-18 14:42:21,213 [INFO] 👁  Monitoring: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox
+2026-02-18 14:42:21,214 [INFO] Drop any .txt or .md file into /Inbox to trigger the AI
+2026-02-18 14:42:21,214 [INFO] Press Ctrl+C to stop
+2026-02-18 14:42:21,214 [INFO] ============================================================
+2026-02-18 14:43:34,863 [INFO] 📥 New file detected: test_task.txt
+2026-02-18 14:43:34,863 [INFO] 🤖 Triggering agent for: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox\test_task.txt
+2026-02-18 14:43:35,038 [INFO] ═══════════════════════════════════════
+2026-02-18 14:43:35,038 [INFO] ▶  Processing: test_task.txt
+2026-02-18 14:43:35,063 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 14:43:35,064 [ERROR] Qwen CLI not found. Check QWEN_COMMAND in agent_runner.py
+2026-02-18 14:43:35,064 [INFO] 🗣  Qwen responded (71 chars)
+2026-02-18 14:43:35,065 [INFO] 📝 Response written to /Needs_Action/test_task_response_20260218_144335.md
+2026-02-18 14:43:35,079 [INFO] 📊 Dashboard.md updated
+2026-02-18 14:43:35,080 [INFO] 📦 Archived to /Done: test_task.txt
+2026-02-18 14:43:35,080 [INFO] ✅ Done: test_task.txt
+2026-02-18 14:43:35,081 [INFO] ═══════════════════════════════════════
+2026-02-18 14:43:35,095 [INFO] ✅ Agent completed successfully for: test_task.txt
+2026-02-18 14:44:14,484 [INFO] 📥 New file detected: test_task.txt
+2026-02-18 14:44:14,484 [INFO] 🤖 Triggering agent for: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox\test_task.txt
+2026-02-18 14:44:14,616 [INFO] ═══════════════════════════════════════
+2026-02-18 14:44:14,616 [INFO] ▶  Processing: test_task.txt
+2026-02-18 14:44:14,617 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 14:44:14,618 [ERROR] Qwen CLI not found. Check QWEN_COMMAND in agent_runner.py
+2026-02-18 14:44:14,618 [INFO] 🗣  Qwen responded (71 chars)
+2026-02-18 14:44:14,619 [INFO] 📝 Response written to /Needs_Action/test_task_response_20260218_144414.md
+2026-02-18 14:44:14,637 [INFO] 📊 Dashboard.md updated
+2026-02-18 14:44:14,639 [INFO] 📦 Archived to /Done: test_task.txt
+2026-02-18 14:44:14,639 [INFO] ✅ Done: test_task.txt
+2026-02-18 14:44:14,639 [INFO] ═══════════════════════════════════════
+2026-02-18 14:44:14,651 [INFO] ✅ Agent completed successfully for: test_task.txt
+2026-02-18 14:54:57,548 [INFO] 📥 New file detected: test2.txt
+2026-02-18 14:54:57,549 [INFO] 🤖 Triggering agent for: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox\test2.txt
+2026-02-18 14:54:57,706 [INFO] ═══════════════════════════════════════
+2026-02-18 14:54:57,706 [INFO] ▶  Processing: test2.txt
+2026-02-18 14:54:57,707 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 14:55:11,194 [INFO] 🗣  Qwen responded (85 chars)
+2026-02-18 14:55:11,195 [INFO] 📝 Response written to /Needs_Action/test2_response_20260218_145511.md
+2026-02-18 14:55:11,210 [INFO] 📊 Dashboard.md updated
+2026-02-18 14:55:11,210 [INFO] 📦 Archived to /Done: test2.txt
+2026-02-18 14:55:11,210 [INFO] ✅ Done: test2.txt
+2026-02-18 14:55:11,210 [INFO] ═══════════════════════════════════════
+2026-02-18 14:55:11,222 [INFO] ✅ Agent completed successfully for: test2.txt
+2026-02-18 14:58:43,061 [INFO] 📥 New file detected: test3.txt
+2026-02-18 14:58:43,062 [INFO] 🤖 Triggering agent for: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox\test3.txt
+2026-02-18 14:58:43,236 [INFO] ═══════════════════════════════════════
+2026-02-18 14:58:43,236 [INFO] ▶  Processing: test3.txt
+2026-02-18 14:58:43,236 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 14:58:54,553 [INFO] 🗣  Qwen responded (1178 chars)
+2026-02-18 14:58:54,554 [INFO] 📝 Response written to /Needs_Action/test3_response_20260218_145854.md
+2026-02-18 14:58:54,571 [INFO] 📊 Dashboard.md updated
+2026-02-18 14:58:54,571 [INFO] 📦 Archived to /Done: test3.txt
+2026-02-18 14:58:54,571 [INFO] ✅ Done: test3.txt
+2026-02-18 14:58:54,571 [INFO] ═══════════════════════════════════════
+2026-02-18 14:58:54,585 [INFO] ✅ Agent completed successfully for: test3.txt
+2026-02-18 15:07:50,429 [INFO] 📥 New file detected: test_task.txt
+2026-02-18 15:07:50,429 [INFO] 🤖 Triggering agent for: C:\Users\MUDASIR SOHAIL\PersonalAI_Vault\Inbox\test_task.txt
+2026-02-18 15:07:50,570 [INFO] ═══════════════════════════════════════
+2026-02-18 15:07:50,570 [INFO] ▶  Processing: test_task.txt
+2026-02-18 15:07:50,571 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 15:08:00,505 [INFO] 🗣  Qwen responded (900 chars)
+2026-02-18 15:08:00,506 [INFO] 📝 Response written to /Needs_Action/test_task_response_20260218_150800.md
+2026-02-18 15:08:00,530 [INFO] 📊 Dashboard.md updated
+2026-02-18 15:08:00,532 [INFO] 📦 Archived to /Done: test_task.txt
+2026-02-18 15:08:00,532 [INFO] ✅ Done: test_task.txt
+2026-02-18 15:08:00,532 [INFO] ═══════════════════════════════════════
+2026-02-18 15:08:00,550 [INFO] ✅ Agent completed successfully for: test_task.txt
+2026-02-18 16:44:19,661 [INFO] ============================================================
+2026-02-18 16:44:19,687 [INFO] 🚀 PersonalAI Watcher starting up...
+2026-02-18 16:44:19,688 [INFO] 👁  Monitoring: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox
+2026-02-18 16:44:19,688 [INFO] Drop any .txt or .md file into /Inbox to trigger the AI
+2026-02-18 16:44:19,689 [INFO] Press Ctrl+C to stop
+2026-02-18 16:44:19,689 [INFO] ============================================================
+2026-02-18 16:44:30,965 [INFO] 📥 New file detected: pathtest.txt
+2026-02-18 16:44:30,965 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\pathtest.txt
+2026-02-18 16:44:31,121 [INFO] ═══════════════════════════════════════
+2026-02-18 16:44:31,121 [INFO] ▶  Processing: pathtest.txt
+2026-02-18 16:44:31,179 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 16:45:00,888 [INFO] 🗣  Qwen responded (1428 chars)
+2026-02-18 16:45:00,889 [INFO] 📝 Response written to /Needs_Action/pathtest_response_20260218_164500.md
+2026-02-18 16:45:00,909 [INFO] 📊 Dashboard.md updated
+2026-02-18 16:45:00,910 [INFO] 📦 Archived to /Done: pathtest.txt
+2026-02-18 16:45:00,910 [INFO] ✅ Done: pathtest.txt
+2026-02-18 16:45:00,910 [INFO] ═══════════════════════════════════════
+2026-02-18 16:45:00,928 [INFO] ✅ Agent completed successfully for: pathtest.txt
+2026-02-18 16:48:49,205 [INFO] 📥 New file detected: test_task2.txt
+2026-02-18 16:48:49,205 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\test_task2.txt
+2026-02-18 16:48:49,379 [INFO] ═══════════════════════════════════════
+2026-02-18 16:48:49,379 [INFO] ▶  Processing: test_task2.txt
+2026-02-18 16:48:49,380 [WARNING] ⚠  File is empty, skipping: test_task2.txt
+2026-02-18 16:48:49,419 [INFO] ✅ Agent completed successfully for: test_task2.txt
+2026-02-18 16:51:36,157 [INFO] 📥 New file detected: pathtest.txt
+2026-02-18 16:51:36,157 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\pathtest.txt
+2026-02-18 16:51:36,285 [INFO] ═══════════════════════════════════════
+2026-02-18 16:51:36,285 [INFO] ▶  Processing: pathtest.txt
+2026-02-18 16:51:36,286 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 16:51:49,699 [INFO] 🗣  Qwen responded (1222 chars)
+2026-02-18 16:51:49,702 [INFO] 📝 Response written to /Needs_Action/pathtest_response_20260218_165149.md
+2026-02-18 16:51:49,714 [INFO] 📊 Dashboard.md updated
+2026-02-18 16:51:49,716 [INFO] 📦 Archived to /Done: pathtest.txt
+2026-02-18 16:51:49,716 [INFO] ✅ Done: pathtest.txt
+2026-02-18 16:51:49,717 [INFO] ═══════════════════════════════════════
+2026-02-18 16:51:49,728 [INFO] ✅ Agent completed successfully for: pathtest.txt
+2026-02-18 16:55:43,068 [INFO] 🛑 Watcher stopped by user.
+2026-02-18 16:56:24,940 [INFO] ============================================================
+2026-02-18 16:56:24,940 [INFO] 🚀 PersonalAI Watcher starting up...
+2026-02-18 16:56:24,940 [INFO] 👁  Monitoring: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox
+2026-02-18 16:56:24,941 [INFO] Drop any .txt or .md file into /Inbox to trigger the AI
+2026-02-18 16:56:24,941 [INFO] Press Ctrl+C to stop
+2026-02-18 16:56:24,941 [INFO] ============================================================
+2026-02-18 16:56:40,537 [INFO] 📥 New file detected: test_task3.txt
+2026-02-18 16:56:40,537 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\test_task3.txt
+2026-02-18 16:56:40,847 [INFO] ═══════════════════════════════════════
+2026-02-18 16:56:40,847 [INFO] ▶  Processing: test_task3.txt
+2026-02-18 16:56:40,848 [WARNING] ⚠  File is empty, skipping: test_task3.txt
+2026-02-18 16:56:40,887 [INFO] ✅ Agent completed successfully for: test_task3.txt
+2026-02-18 16:59:19,275 [INFO] 🛑 Watcher stopped by user.
+2026-02-18 16:59:52,358 [INFO] ============================================================
+2026-02-18 16:59:52,358 [INFO] 🚀 PersonalAI Watcher starting up...
+2026-02-18 16:59:52,358 [INFO] 👁  Monitoring: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox
+2026-02-18 16:59:52,359 [INFO] Drop any .txt or .md file into /Inbox to trigger the AI
+2026-02-18 16:59:52,359 [INFO] Press Ctrl+C to stop
+2026-02-18 16:59:52,359 [INFO] ============================================================
+2026-02-18 17:00:08,416 [INFO] 📥 New file detected: testing_tasks.txt
+2026-02-18 17:00:08,416 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\testing_tasks.txt
+2026-02-18 17:00:08,677 [INFO] ═══════════════════════════════════════
+2026-02-18 17:00:08,677 [INFO] ▶  Processing: testing_tasks.txt
+2026-02-18 17:00:08,677 [WARNING] ⚠  File is empty, skipping: testing_tasks.txt
+2026-02-18 17:00:08,713 [INFO] ✅ Agent completed successfully for: testing_tasks.txt
+2026-02-18 17:02:16,232 [INFO] 📥 New file detected: Task_testing.txt
+2026-02-18 17:02:16,232 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\Task_testing.txt
+2026-02-18 17:02:16,378 [INFO] ═══════════════════════════════════════
+2026-02-18 17:02:16,379 [INFO] ▶  Processing: Task_testing.txt
+2026-02-18 17:02:16,392 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 17:02:45,374 [INFO] 🗣  Qwen responded (1127 chars)
+2026-02-18 17:02:45,375 [INFO] 📝 Response written to /Needs_Action/Task_testing_response_20260218_170245.md
+2026-02-18 17:02:45,393 [INFO] 📊 Dashboard.md updated
+2026-02-18 17:02:45,393 [INFO] 📦 Archived to /Done: Task_testing.txt
+2026-02-18 17:02:45,394 [INFO] ✅ Done: Task_testing.txt
+2026-02-18 17:02:45,394 [INFO] ═══════════════════════════════════════
+2026-02-18 17:02:45,406 [INFO] ✅ Agent completed successfully for: Task_testing.txt
+2026-02-18 17:02:46,407 [INFO] 📥 New file detected: Task_testing.txt
+2026-02-18 17:02:46,407 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\Task_testing.txt
+2026-02-18 17:02:46,575 [ERROR] ❌ Agent failed: 
+2026-02-18 17:04:45,613 [INFO] 🛑 Watcher stopped by user.
+2026-02-18 17:05:21,985 [INFO] ============================================================
+2026-02-18 17:05:21,985 [INFO] 🚀 PersonalAI Watcher starting up...
+2026-02-18 17:05:21,986 [INFO] 👁  Monitoring: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox
+2026-02-18 17:05:21,986 [INFO] Drop any .txt or .md file into /Inbox to trigger the AI
+2026-02-18 17:05:21,986 [INFO] Press Ctrl+C to stop
+2026-02-18 17:05:21,986 [INFO] ============================================================
+2026-02-18 17:05:51,332 [INFO] 📥 New file detected: Task_tesing.txt
+2026-02-18 17:05:51,333 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\Task_tesing.txt
+2026-02-18 17:05:51,502 [INFO] ═══════════════════════════════════════
+2026-02-18 17:05:51,503 [INFO] ▶  Processing: Task_tesing.txt
+2026-02-18 17:05:51,508 [INFO] 🧠 Calling Qwen CLI...
+2026-02-18 17:06:06,068 [INFO] 🗣  Qwen responded (1468 chars)
+2026-02-18 17:06:06,073 [INFO] 📝 Response written to /Needs_Action/Task_tesing_response_20260218_170606.md
+2026-02-18 17:06:06,093 [INFO] 📊 Dashboard.md updated
+2026-02-18 17:06:06,094 [INFO] 📦 Archived to /Done: Task_tesing.txt
+2026-02-18 17:06:06,094 [INFO] ✅ Done: Task_tesing.txt
+2026-02-18 17:06:06,095 [INFO] ═══════════════════════════════════════
+2026-02-18 17:06:06,120 [INFO] ✅ Agent completed successfully for: Task_tesing.txt
+2026-02-18 17:06:07,121 [INFO] 📥 New file detected: Task_tesing.txt
+2026-02-18 17:06:07,121 [INFO] 🤖 Triggering agent for: D:\Hackathon 0\Bronze-Tier\PersonalAI_Vault\Inbox\Task_tesing.txt
+2026-02-18 17:06:07,299 [ERROR] ❌ Agent failed: 
