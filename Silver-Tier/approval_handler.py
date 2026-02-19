@@ -71,8 +71,12 @@ def parse_action_file(filepath: Path) -> dict:
             action_type = line.replace("**Action:**", "").strip()
             action["type"] = action_type
 
-    # Extract body (everything after "## Draft Body:" or "## Post Content:")
-    if "## Draft Body:" in content:
+    # Extract body (everything after "## Draft Email for Approval:" or "## Draft Body:")
+    if "## Draft Email for Approval:" in content:
+        action["body"] = content.split("## Draft Email for Approval:")[-1].strip()
+        action["body"] = action["body"].split("---")[0].strip()
+        action["type"] = "SEND_EMAIL"
+    elif "## Draft Body:" in content:
         action["body"] = content.split("## Draft Body:")[-1].strip()
         action["body"] = action["body"].split("---")[0].strip()
         action["type"] = "SEND_EMAIL"
@@ -113,47 +117,12 @@ def send_email(to: str, subject: str, body: str) -> bool:
 
 
 def post_to_linkedin(content: str) -> bool:
-    """Posts content to LinkedIn. Requires LINKEDIN_TOKEN env variable."""
-    import urllib.request
-
-    token = os.environ.get("LINKEDIN_TOKEN", "")
-    person_id = os.environ.get("LINKEDIN_PERSON_ID", "")
-
-    if not token or not person_id:
-        log.error("❌ Set LINKEDIN_TOKEN and LINKEDIN_PERSON_ID environment variables")
-        log.error("Get them from: developer.linkedin.com → Your App → Auth")
-        return False
-
-    import json
-    payload = json.dumps({
-        "author": f"urn:li:person:{person_id}",
-        "lifecycleState": "PUBLISHED",
-        "specificContent": {
-            "com.linkedin.ugc.ShareContent": {
-                "shareCommentary": {"text": content},
-                "shareMediaCategory": "NONE"
-            }
-        },
-        "visibility": {"com.linkedin.ugc.MemberNetworkVisibility": "PUBLIC"}
-    }).encode("utf-8")
-
-    req = urllib.request.Request(
-        "https://api.linkedin.com/v2/ugcPosts",
-        data=payload,
-        headers={
-            "Authorization": f"Bearer {token}",
-            "Content-Type": "application/json",
-            "X-Restli-Protocol-Version": "2.0.0"
-        }
-    )
-
-    try:
-        with urllib.request.urlopen(req) as resp:
-            log.info(f"✅ LinkedIn post published! Status: {resp.status}")
-            return True
-    except Exception as e:
-        log.error(f"LinkedIn post failed: {e}")
-        return False
+    """Posts content to LinkedIn using Playwright browser automation."""
+    # Import from linkedin_poster.py
+    from linkedin_poster import post_via_playwright
+    
+    log.info("💼 Executing: Post to LinkedIn via Playwright")
+    return post_via_playwright(content)
 
 
 def execute_action(action: dict, filename: str) -> bool:
@@ -166,7 +135,8 @@ def execute_action(action: dict, filename: str) -> bool:
 
     elif action_type == "LINKEDIN_POST":
         log.info(f"💼 Executing: Post to LinkedIn")
-        return post_to_linkedin(action["post_content"])
+        from linkedin_poster import post_via_playwright
+        return post_via_playwright(action["post_content"])
 
     else:
         log.warning(f"⚠ Unknown action type: {action_type} in {filename}")

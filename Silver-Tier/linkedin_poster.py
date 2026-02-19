@@ -11,6 +11,7 @@ from datetime import datetime
 VAULT_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "PersonalAI_Vault")
 APPROVAL_PATH = os.path.join(VAULT_PATH, "Needs_Action", "APPROVAL_REQUIRED")
 DONE_PATH = os.path.join(VAULT_PATH, "Done")
+LINKEDIN_SESSION_PATH = os.path.join(VAULT_PATH, "credentials", "linkedin_session")
 
 
 def read_file(path: str) -> str:
@@ -52,32 +53,142 @@ def get_recent_activity() -> str:
 
 
 def generate_linkedin_post() -> str:
-    """Uses Qwen to generate a professional LinkedIn post."""
-    skill = read_file(os.path.join(VAULT_PATH, "Skills", "skill_linkedin_post.md"))
-    recent = get_recent_activity()
-    dashboard = read_file(os.path.join(VAULT_PATH, "Dashboard.md"))
+    prompt = """Write a LinkedIn post about this achievement.
+    
+Topic: Completed Silver Tier of Hackathon 0 at Governor House
 
-    prompt = f"""You are a Personal AI Employee writing a LinkedIn post for your employer's business.
+What was built:
+- Gmail Watcher monitors important emails automatically 24/7
+- WhatsApp Watcher detects urgent keyword messages in real time
+- Email sending system with human-in-the-loop approval workflow
+- LinkedIn auto-posting powered by Qwen AI
+- Approval Handler executes actions after human review
+- Windows Task Scheduler runs everything automatically
 
-=== LINKEDIN POST SKILL ===
-{skill}
+Tech stack: Python, Qwen CLI, Playwright, Gmail API, Obsidian
 
-=== RECENT COMPLETED WORK ===
-{recent}
+Rules:
+- Do NOT mention Ramadan
+- Do NOT mention emails sent to anyone
+- ONLY talk about the hackathon achievement
+- Sound human and genuine
+- 150-200 words
+- End with these hashtags only:
+  #Hackathon0 #GovernorHouse #AIAgent #Python #Qwen #BuildInPublic
 
-=== DASHBOARD SUMMARY ===
-{dashboard}
+Write ONLY the post. Nothing else."""
 
-=== YOUR TASK ===
-Write ONE compelling LinkedIn post about the work being done, a business insight,
-or a lesson learned. Follow the skill instructions exactly. Make it sound genuine
-and human — not like AI wrote it. 150-300 words. Include 3-5 hashtags at the end.
-
-Write ONLY the post content. No preamble, no explanation.
-"""
-
-    print("🧠 Qwen generating LinkedIn post...")
     return call_qwen(prompt)
+
+
+def post_via_playwright(content: str) -> bool:
+    from playwright.sync_api import sync_playwright
+    import time
+    
+    SESSION_PATH = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "PersonalAI_Vault", "credentials", "linkedin_session"
+    )
+    os.makedirs(SESSION_PATH, exist_ok=True)
+    
+    with sync_playwright() as p:
+        browser = p.chromium.launch_persistent_context(
+            SESSION_PATH,
+            headless=False,
+            viewport={"width": 1280, "height": 800}
+        )
+        page = browser.pages[0] if browser.pages else browser.new_page()
+        page.goto("https://www.linkedin.com/feed/", timeout=60000)
+        
+        print("Waiting for LinkedIn feed...")
+        page.wait_for_timeout(5000)
+        
+        # Try multiple selectors for Start a post button
+        post_selectors = [
+            'button[aria-label="Start a post"]',
+            '.share-box-feed-entry__trigger',
+            'button.share-box-feed-entry__trigger',
+            '[data-testid="share-box-feed-entry__trigger"]',
+            'div.share-box-feed-entry__top-bar button',
+        ]
+        
+        clicked = False
+        for selector in post_selectors:
+            try:
+                btn = page.wait_for_selector(selector, timeout=5000)
+                if btn:
+                    btn.click()
+                    print(f"Clicked post button: {selector}")
+                    clicked = True
+                    break
+            except:
+                continue
+        
+        if not clicked:
+            # Try JavaScript click as last resort
+            try:
+                page.evaluate("""
+                    const buttons = document.querySelectorAll('button');
+                    for(const btn of buttons) {
+                        if(btn.innerText.includes('Start a post') || 
+                           btn.innerText.includes('Write an article')) {
+                            btn.click();
+                            break;
+                        }
+                    }
+                """)
+                clicked = True
+                print("Clicked via JavaScript")
+            except:
+                pass
+        
+        if not clicked:
+            print("Could not find post button. Is LinkedIn logged in?")
+            browser.close()
+            return False
+        
+        page.wait_for_timeout(3000)
+        
+        # Type content in post box
+        editor_selectors = [
+            'div[role="textbox"]',
+            '.ql-editor',
+            'div[contenteditable="true"]',
+        ]
+        
+        for selector in editor_selectors:
+            try:
+                editor = page.wait_for_selector(selector, timeout=5000)
+                if editor:
+                    editor.click()
+                    page.keyboard.type(content)
+                    print("Content typed successfully")
+                    break
+            except:
+                continue
+        
+        page.wait_for_timeout(2000)
+        
+        # Click Post button
+        submit_selectors = [
+            'button[aria-label="Post"]',
+            '.share-actions__primary-action',
+            'button.share-actions__primary-action',
+        ]
+        
+        for selector in submit_selectors:
+            try:
+                btn = page.wait_for_selector(selector, timeout=5000)
+                if btn:
+                    btn.click()
+                    print("Post submitted!")
+                    break
+            except:
+                continue
+        
+        page.wait_for_timeout(3000)
+        browser.close()
+        return True
 
 
 def save_for_approval(post_content: str):

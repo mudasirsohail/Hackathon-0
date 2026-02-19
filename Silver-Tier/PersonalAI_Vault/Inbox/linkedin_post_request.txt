@@ -1,0 +1,17 @@
+Write a LinkedIn post ONLY about this topic:
+
+I just completed Silver Tier of Hackathon 0 at Governor House.
+
+What I built:
+- Gmail Watcher that monitors important emails automatically
+- WhatsApp Watcher that detects urgent keyword messages  
+- Email sending system with human approval workflow
+- LinkedIn auto-posting using Qwen AI
+- Approval Handler that executes actions after human review
+- Windows Task Scheduler for 24/7 automation
+
+Tech stack: Python, Qwen CLI, Playwright, Gmail API, Obsidian vault
+
+Do NOT mention Ramadan. Do NOT mention emails sent.
+ONLY talk about the hackathon achievement above.
+Include hashtags: #Hackathon0 #GovernorHouse #AI #Python #Automation
