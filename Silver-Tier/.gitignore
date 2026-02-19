@@ -1,0 +1,8 @@
+# Silver Tier .gitignore
+PersonalAI_Vault/credentials/
+PersonalAI_Vault/Logs/
+*.pyc
+__pycache__/
+token.json
+whatsapp_session/
+.env
